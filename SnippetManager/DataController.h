@@ -14,4 +14,8 @@
 
 @property (strong) NSManagedObjectContext *managedObjectContext;
 
+- (NSManagedObject*)findOrCreateObjectWithEntityName:(NSString*)entityName
+                                           predicate:(NSPredicate*)predicate
+                                   createNewIfAbsent:(BOOL)createNew;
+
 @end

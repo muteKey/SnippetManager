@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "ApiClient.h"
 #import "DataController.h"
+#import "Snippet.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) IBOutlet NSArrayController *arrayController;
@@ -21,12 +22,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [[ApiClient sharedInstance] snippetsWithSuccess:^(NSURLSessionDataTask *task, NSArray *snippets) {
+    __weak typeof (self) wSelf = self;
+    
+    [[ApiClient sharedInstance] snippetsWithSuccess:^(NSURLSessionDataTask *task, id responseObject) {
         
-    }
-                                            failure:^(NSURLSessionDataTask *task, NSError *error) {
-                                                NSLog(@"error %@", error);
-                                            }];
+        for (NSDictionary *dict in responseObject) {
+            NSString *identifier = dict[@"_id"];
+            
+            Snippet *snippet = (Snippet*)[wSelf.dataController findOrCreateObjectWithEntityName:@"Snippet"
+                                                                                      predicate:[NSPredicate predicateWithFormat:@"snippetIdentifier == %@", identifier]
+                                                                              createNewIfAbsent:YES];
+            
+            snippet.snippetIdentifier = identifier;
+            snippet.snippetDescription = dict[@"description"];
+            snippet.snippetShortcut = dict[@"shortcut"];
+            snippet.snippetTitle = dict[@"title"];
+        }
+        
+        [wSelf.dataController.managedObjectContext save:nil];
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        
+        NSLog(@"error %@", error);
+
+    }];
 }
 
 - (DataController *)dataController {

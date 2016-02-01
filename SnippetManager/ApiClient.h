@@ -12,7 +12,7 @@
 
 + (instancetype)sharedInstance;
 
-- (NSURLSessionTask*)snippetsWithSuccess:(void (^)(NSURLSessionDataTask *task, NSArray *snippets))success
+- (NSURLSessionTask*)snippetsWithSuccess:(void (^)(NSURLSessionDataTask *task, id responseObject))success
                                  failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
 
 @end

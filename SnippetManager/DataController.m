@@ -20,6 +20,30 @@
     return self;
 }
 
+- (NSManagedObject*)findOrCreateObjectWithEntityName:(NSString*)entityName
+                                           predicate:(NSPredicate*)predicate
+                                   createNewIfAbsent:(BOOL)createNew
+{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    [fetchRequest setPredicate:predicate];
+    
+    NSError *error = nil;
+    NSArray *fetchedObjects = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    if (fetchedObjects.count > 0) {
+        return fetchedObjects.firstObject;
+    }
+    
+    if (createNew) {
+        NSManagedObject *object = [NSEntityDescription insertNewObjectForEntityForName:entityName inManagedObjectContext:self.managedObjectContext];
+        return object;
+    }
+    
+    return nil;
+}
+
 - (void)initializeCoreData
 {
     NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"SnippetModel" withExtension:@"momd"];

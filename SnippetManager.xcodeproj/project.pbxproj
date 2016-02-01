@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E841475A1C5F943700B60F5D /* Snippet+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E84147571C5F943700B60F5D /* Snippet+CoreDataProperties.m */; };
+		E841475B1C5F943700B60F5D /* Snippet.m in Sources */ = {isa = PBXBuildFile; fileRef = E84147591C5F943700B60F5D /* Snippet.m */; };
 		EDCDEAF71C5EB8AC00C4E871 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCDEAF61C5EB8AC00C4E871 /* AppDelegate.m */; };
 		EDCDEAFA1C5EB8AC00C4E871 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCDEAF91C5EB8AC00C4E871 /* main.m */; };
 		EDCDEAFD1C5EB8AC00C4E871 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCDEAFC1C5EB8AC00C4E871 /* ViewController.m */; };
@@ -16,8 +18,6 @@
 		EDCDEB191C5ECBA500C4E871 /* ApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCDEB181C5ECBA500C4E871 /* ApiClient.m */; };
 		EDCDEB1F1C5ECF8400C4E871 /* SnippetModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EDCDEB1D1C5ECF8400C4E871 /* SnippetModel.xcdatamodeld */; };
 		EDCDEB211C5ED64400C4E871 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDCDEB201C5ED64400C4E871 /* CoreData.framework */; };
-		EDCDEB261C5EDA8000C4E871 /* Snippet+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCDEB231C5EDA8000C4E871 /* Snippet+CoreDataProperties.m */; };
-		EDCDEB271C5EDA8000C4E871 /* Snippet.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCDEB251C5EDA8000C4E871 /* Snippet.m */; };
 		EDCDEB2A1C5EDDC300C4E871 /* DataController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCDEB291C5EDDC300C4E871 /* DataController.m */; };
 		F7D2757D0B9693D94868E67B /* libPods-SnippetManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54E74DEEBBBD8277E6F0852C /* libPods-SnippetManager.a */; };
 /* End PBXBuildFile section */
@@ -36,6 +36,10 @@
 		11C6272ABC56212DC16CB227 /* Pods-SnippetManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnippetManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnippetManager/Pods-SnippetManager.debug.xcconfig"; sourceTree = "<group>"; };
 		54E74DEEBBBD8277E6F0852C /* libPods-SnippetManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SnippetManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F68218799E371532FED4646 /* Pods-SnippetManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnippetManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-SnippetManager/Pods-SnippetManager.release.xcconfig"; sourceTree = "<group>"; };
+		E84147561C5F943700B60F5D /* Snippet+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Snippet+CoreDataProperties.h"; sourceTree = "<group>"; };
+		E84147571C5F943700B60F5D /* Snippet+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Snippet+CoreDataProperties.m"; sourceTree = "<group>"; };
+		E84147581C5F943700B60F5D /* Snippet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Snippet.h; sourceTree = "<group>"; };
+		E84147591C5F943700B60F5D /* Snippet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Snippet.m; sourceTree = "<group>"; };
 		EDCDEAF21C5EB8AC00C4E871 /* SnippetManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnippetManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDCDEAF51C5EB8AC00C4E871 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EDCDEAF61C5EB8AC00C4E871 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -52,10 +56,6 @@
 		EDCDEB181C5ECBA500C4E871 /* ApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiClient.m; sourceTree = "<group>"; };
 		EDCDEB1E1C5ECF8400C4E871 /* SnippetModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SnippetModel.xcdatamodel; sourceTree = "<group>"; };
 		EDCDEB201C5ED64400C4E871 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		EDCDEB221C5EDA8000C4E871 /* Snippet+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Snippet+CoreDataProperties.h"; sourceTree = "<group>"; };
-		EDCDEB231C5EDA8000C4E871 /* Snippet+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Snippet+CoreDataProperties.m"; sourceTree = "<group>"; };
-		EDCDEB241C5EDA8000C4E871 /* Snippet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Snippet.h; sourceTree = "<group>"; };
-		EDCDEB251C5EDA8000C4E871 /* Snippet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Snippet.m; sourceTree = "<group>"; };
 		EDCDEB281C5EDDC300C4E871 /* DataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataController.h; sourceTree = "<group>"; };
 		EDCDEB291C5EDDC300C4E871 /* DataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,12 +132,12 @@
 				EDCDEB171C5ECBA500C4E871 /* ApiClient.h */,
 				EDCDEB181C5ECBA500C4E871 /* ApiClient.m */,
 				EDCDEB1D1C5ECF8400C4E871 /* SnippetModel.xcdatamodeld */,
-				EDCDEB221C5EDA8000C4E871 /* Snippet+CoreDataProperties.h */,
-				EDCDEB231C5EDA8000C4E871 /* Snippet+CoreDataProperties.m */,
-				EDCDEB241C5EDA8000C4E871 /* Snippet.h */,
-				EDCDEB251C5EDA8000C4E871 /* Snippet.m */,
 				EDCDEB281C5EDDC300C4E871 /* DataController.h */,
 				EDCDEB291C5EDDC300C4E871 /* DataController.m */,
+				E84147561C5F943700B60F5D /* Snippet+CoreDataProperties.h */,
+				E84147571C5F943700B60F5D /* Snippet+CoreDataProperties.m */,
+				E84147581C5F943700B60F5D /* Snippet.h */,
+				E84147591C5F943700B60F5D /* Snippet.m */,
 			);
 			path = SnippetManager;
 			sourceTree = "<group>";
@@ -311,12 +311,12 @@
 			files = (
 				EDCDEAFD1C5EB8AC00C4E871 /* ViewController.m in Sources */,
 				EDCDEB2A1C5EDDC300C4E871 /* DataController.m in Sources */,
-				EDCDEB271C5EDA8000C4E871 /* Snippet.m in Sources */,
-				EDCDEB261C5EDA8000C4E871 /* Snippet+CoreDataProperties.m in Sources */,
+				E841475A1C5F943700B60F5D /* Snippet+CoreDataProperties.m in Sources */,
 				EDCDEAFA1C5EB8AC00C4E871 /* main.m in Sources */,
 				EDCDEAF71C5EB8AC00C4E871 /* AppDelegate.m in Sources */,
 				EDCDEB1F1C5ECF8400C4E871 /* SnippetModel.xcdatamodeld in Sources */,
 				EDCDEB191C5ECBA500C4E871 /* ApiClient.m in Sources */,
+				E841475B1C5F943700B60F5D /* Snippet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

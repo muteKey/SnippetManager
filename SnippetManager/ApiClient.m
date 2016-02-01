@@ -42,20 +42,14 @@
     return self;
 }
 
-- (NSURLSessionTask*)snippetsWithSuccess:(void (^)(NSURLSessionDataTask *task, NSArray *snippets))success
+- (NSURLSessionTask*)snippetsWithSuccess:(void (^)(NSURLSessionDataTask *task, id responseObject))success
                                  failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure
 {
     return [self.apiManager GET:@"snippet"
                      parameters:nil
                        progress:nil
-                        success:^(NSURLSessionDataTask * task, id responseObject) {
-                            if (success) {
-                                success(task, nil);
-                            }
-                        }
-                        failure:^(NSURLSessionDataTask * task, NSError * error) {
-                            NSLog(@"error %@", error);
-                        }];
+                        success:success
+                        failure:failure];
 }
 
 @end
