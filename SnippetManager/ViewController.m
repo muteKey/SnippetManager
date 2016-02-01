@@ -24,28 +24,30 @@
     
     __weak typeof (self) wSelf = self;
     
-    [[ApiClient sharedInstance] snippetsWithSuccess:^(NSURLSessionDataTask *task, id responseObject) {
-        
-        for (NSDictionary *dict in responseObject) {
-            NSString *identifier = dict[@"_id"];
-            
-            Snippet *snippet = (Snippet*)[wSelf.dataController findOrCreateObjectWithEntityName:@"Snippet"
-                                                                                      predicate:[NSPredicate predicateWithFormat:@"snippetIdentifier == %@", identifier]
-                                                                              createNewIfAbsent:YES];
-            
-            snippet.snippetIdentifier = identifier;
-            snippet.snippetDescription = dict[@"description"];
-            snippet.snippetShortcut = dict[@"shortcut"];
-            snippet.snippetTitle = dict[@"title"];
-        }
-        
-        [wSelf.dataController.managedObjectContext save:nil];
-        
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        
-        NSLog(@"error %@", error);
-
-    }];
+//    [[ApiClient sharedInstance] snippetsWithSuccess:^(NSURLSessionDataTask *task, id responseObject) {
+//        
+//        for (NSDictionary *dict in responseObject) {
+//            NSString *identifier = dict[@"_id"];
+//            
+//            Snippet *snippet = (Snippet*)[wSelf.dataController findOrCreateObjectWithEntityName:@"Snippet"
+//                                                                                      predicate:[NSPredicate predicateWithFormat:@"snippetIdentifier == %@", identifier]
+//                                                                              createNewIfAbsent:YES];
+//            
+//            snippet.snippetIdentifier = identifier;
+//            snippet.snippetDescription = dict[@"description"];
+//            snippet.snippetShortcut = dict[@"shortcut"];
+//            snippet.snippetTitle = dict[@"title"];
+//        }
+//        
+//        [wSelf.dataController.managedObjectContext save:nil];
+//        
+//    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+//        
+//        NSLog(@"error %@", error);
+//
+//    }];
+    
+    [[ApiClient sharedInstance] mediaWithSuccess:nil failure:nil];
 }
 
 - (DataController *)dataController {
