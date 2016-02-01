@@ -3,10 +3,11 @@
     <entity name="Snippet" representedClassName="Snippet" syncable="YES">
         <attribute name="snippetDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="snippetFilePath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="snippetIdentifier" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="snippetShortcut" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="snippetTitle" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Snippet" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Snippet" positionX="-63" positionY="-18" width="128" height="120"/>
     </elements>
 </model>

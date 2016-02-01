@@ -15,10 +15,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Snippet (CoreDataProperties)
 
-@property (nullable, nonatomic, retain) NSString *snippetTitle;
 @property (nullable, nonatomic, retain) NSString *snippetDescription;
-@property (nullable, nonatomic, retain) NSString *snippetShortcut;
 @property (nullable, nonatomic, retain) NSString *snippetFilePath;
+@property (nullable, nonatomic, retain) NSString *snippetShortcut;
+@property (nullable, nonatomic, retain) NSString *snippetTitle;
+@property (nullable, nonatomic, retain) NSString *snippetIdentifier;
 
 @end
 

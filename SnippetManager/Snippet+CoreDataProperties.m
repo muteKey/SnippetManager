@@ -13,9 +13,10 @@
 
 @implementation Snippet (CoreDataProperties)
 
-@dynamic snippetTitle;
 @dynamic snippetDescription;
-@dynamic snippetShortcut;
 @dynamic snippetFilePath;
+@dynamic snippetShortcut;
+@dynamic snippetTitle;
+@dynamic snippetIdentifier;
 
 @end
