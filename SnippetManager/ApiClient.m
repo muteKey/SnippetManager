@@ -12,10 +12,13 @@
 @interface ApiClient ()
 
 @property (nonatomic, strong) AFHTTPSessionManager *apiManager;
+@property (nonatomic, strong) AFHTTPSessionManager *mediaManager;
 
 @end
 
-#define BASE_URL @"https://ios-snippet.restdb.io/"
+#define BASE_REST_URL @"https://ios-snippet.restdb.io/rest"
+#define BASE_MEDIA_URL @"https://ios-snippet.restdb.io/media"
+
 #define API_KEY @"dfb400eec7bdf05607e80177f0eab141c56f4"
 
 @implementation ApiClient
@@ -34,10 +37,14 @@
 {
     self = [super init];
     if (self) {
-        self.apiManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:BASE_URL]
+        self.apiManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:BASE_REST_URL]
                                                    sessionConfiguration:nil];
         [self.apiManager.requestSerializer setValue:API_KEY forHTTPHeaderField:@"x-apikey"];
         
+        self.mediaManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:BASE_MEDIA_URL]
+                                                     sessionConfiguration:nil];
+        [self.mediaManager.requestSerializer setValue:API_KEY forHTTPHeaderField:@"x-apikey"];
+        self.mediaManager.responseSerializer = [AFXMLDocumentResponseSerializer serializer];
     }
     return self;
 }
@@ -45,27 +52,22 @@
 - (NSURLSessionTask*)snippetsWithSuccess:(void (^)(NSURLSessionDataTask *task, id responseObject))success
                                  failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure
 {
-    return [self.apiManager GET:@"rest/snippet"
+    return [self.apiManager GET:@"snippet"
                      parameters:nil
                        progress:nil
                         success:success
                         failure:failure];
 }
 
-- (NSURLSessionTask*)mediaWithSuccess:(void (^)(NSURLSessionDataTask *task, id responseObject))success
-                              failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure
+- (NSURLSessionTask*)mediaWithID:(NSString*)identifier
+                         success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
+                         failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure
 {
-    return [self.apiManager GET:@"media/56af74232d354d5200001a50"
-                     parameters:nil
-                       progress:nil
-                        success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                            NSLog(@"object %@", responseObject);
-
-                        }
-                        failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                            NSLog(@"error %@", error);
-
-                        }];
+    return [self.mediaManager GET:identifier
+                       parameters:nil
+                         progress:nil
+                          success:success
+                          failure:failure];
 }
 
 

@@ -15,7 +15,7 @@
 - (NSURLSessionTask*)snippetsWithSuccess:(void (^)(NSURLSessionDataTask *task, id responseObject))success
                                  failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
 
-- (NSURLSessionTask*)mediaWithSuccess:(void (^)(NSURLSessionDataTask *task, id responseObject))success
-                              failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
-
+- (NSURLSessionTask*)mediaWithID:(NSString*)identifier
+                         success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
+                         failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
 @end
