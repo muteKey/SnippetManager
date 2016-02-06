@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
@@ -674,13 +674,13 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JIT-Lm-hyE">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                                <rect key="frame" x="0.0" y="100" width="480" height="170"/>
                                 <clipView key="contentView" id="hWM-KX-ufC">
-                                    <rect key="frame" x="1" y="0.0" width="478" height="254"/>
+                                    <rect key="frame" x="1" y="0.0" width="478" height="169"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" typeSelect="NO" rowSizeStyle="automatic" headerView="PxL-81-M4Q" viewBased="YES" id="t6t-Ms-XCA">
-                                            <rect key="frame" x="0.0" y="0.0" width="503" height="231"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="503" height="146"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -760,7 +760,7 @@
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
                                 <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="32U-Ri-KwJ">
-                                    <rect key="frame" x="1" y="253" width="478" height="16"/>
+                                    <rect key="frame" x="1" y="153" width="478" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="xH8-X8-0aG">
@@ -772,12 +772,27 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableHeaderView>
                             </scrollView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="k3I-Bb-vCv">
+                                <rect key="frame" x="139" y="53" width="202" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="190" id="qb7-bv-lHX"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Install" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="7yi-rU-KAJ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="installTapped:" target="XfG-lQ-9wD" id="Wob-UV-fv6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="JIT-Lm-hyE" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="8pb-Gq-8Q4"/>
-                            <constraint firstAttribute="bottom" secondItem="JIT-Lm-hyE" secondAttribute="bottom" id="JAz-h5-BcP"/>
+                            <constraint firstAttribute="bottom" secondItem="JIT-Lm-hyE" secondAttribute="bottom" constant="100" id="JAz-h5-BcP"/>
                             <constraint firstAttribute="trailing" secondItem="JIT-Lm-hyE" secondAttribute="trailing" id="KrU-HG-OhE"/>
                             <constraint firstItem="JIT-Lm-hyE" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="QvZ-BD-Dg5"/>
+                            <constraint firstItem="k3I-Bb-vCv" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="XrW-3u-csg"/>
+                            <constraint firstAttribute="bottom" secondItem="k3I-Bb-vCv" secondAttribute="bottom" constant="60" id="hxO-fE-f1Y"/>
                         </constraints>
                     </view>
                     <connections>
@@ -785,7 +800,7 @@
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <arrayController mode="entity" entityName="Snippet" automaticallyPreparesContent="YES" avoidsEmptySelection="NO" id="7cp-ix-K72">
+                <arrayController mode="entity" entityName="Snippet" automaticallyPreparesContent="YES" id="7cp-ix-K72">
                     <connections>
                         <binding destination="XfG-lQ-9wD" name="managedObjectContext" keyPath="self.dataController.managedObjectContext" id="861-pR-a3d"/>
                     </connections>
