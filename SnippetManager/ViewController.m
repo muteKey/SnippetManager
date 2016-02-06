@@ -11,9 +11,12 @@
 #import "DataController.h"
 #import "Snippet.h"
 
+static NSString *CODE_SNIPPETS_PATH = @"/Library/Developer/Xcode/UserData/CodeSnippets/";
+
 @interface ViewController ()
 @property (nonatomic, strong) IBOutlet NSArrayController *arrayController;
 @property (nonatomic, strong) DataController *dataController;
+@property (weak) IBOutlet NSTableView *tableView;
 
 @end
 
@@ -50,11 +53,20 @@
                                                 
                                                 NSString *name = [NSString stringWithFormat:@"%@.codesnippet", snippet.snippetIdentifier];
                                                 
+                                                NSFileManager *fileManager = [NSFileManager defaultManager];
+                                                
+                                                NSURL *documentsURL = [[fileManager URLsForDirectory:NSDocumentDirectory
+                                                                                           inDomains:NSUserDomainMask] firstObject];
+                                                name = [documentsURL.path stringByAppendingFormat:@"/%@", name];
+
+                                                
                                                 NSError *er = nil;
                                                 
                                                 [data writeToFile:name
                                                           options:NSDataWritingAtomic
                                                             error:&er];
+                                                
+                                                snippet.snippetFilePath = name;
                                                 
                                                 NSLog(@"%@", er.localizedDescription);
                                                 
@@ -73,6 +85,21 @@
 
     }];
 }
+
+- (IBAction)installTapped:(NSButton *)sender {
+    Snippet *snippet = self.arrayController.selectedObjects.firstObject;
+    
+    NSString *path = [NSHomeDirectory() stringByAppendingString:CODE_SNIPPETS_PATH];
+    path = [path stringByAppendingString:snippet.snippetFilePath.lastPathComponent];
+    
+    NSError *er = nil;
+    
+    [[NSFileManager defaultManager] copyItemAtPath:snippet.snippetFilePath
+                                            toPath:path
+                                             error:&er];
+    NSLog(@"%@ error", er);
+}
+
 
 - (DataController *)dataController {
     if (!_dataController) {
