@@ -7,18 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E841475A1C5F943700B60F5D /* Snippet+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E84147571C5F943700B60F5D /* Snippet+CoreDataProperties.m */; };
-		E841475B1C5F943700B60F5D /* Snippet.m in Sources */ = {isa = PBXBuildFile; fileRef = E84147591C5F943700B60F5D /* Snippet.m */; };
-		EDCDEAF71C5EB8AC00C4E871 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCDEAF61C5EB8AC00C4E871 /* AppDelegate.m */; };
-		EDCDEAFA1C5EB8AC00C4E871 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCDEAF91C5EB8AC00C4E871 /* main.m */; };
-		EDCDEAFD1C5EB8AC00C4E871 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCDEAFC1C5EB8AC00C4E871 /* ViewController.m */; };
-		EDCDEAFF1C5EB8AC00C4E871 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDCDEAFE1C5EB8AC00C4E871 /* Assets.xcassets */; };
-		EDCDEB021C5EB8AC00C4E871 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDCDEB001C5EB8AC00C4E871 /* Main.storyboard */; };
+		ED5C4D8E1C66AED1003BA5EE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED5C4D771C66AED1003BA5EE /* AppDelegate.m */; };
+		ED5C4D8F1C66AED1003BA5EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED5C4D781C66AED1003BA5EE /* Assets.xcassets */; };
+		ED5C4D901C66AED1003BA5EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED5C4D7A1C66AED1003BA5EE /* Main.storyboard */; };
+		ED5C4D911C66AED1003BA5EE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED5C4D7E1C66AED1003BA5EE /* ViewController.m */; };
+		ED5C4D921C66AED1003BA5EE /* DataController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED5C4D811C66AED1003BA5EE /* DataController.m */; };
+		ED5C4D931C66AED1003BA5EE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED5C4D821C66AED1003BA5EE /* Info.plist */; };
+		ED5C4D941C66AED1003BA5EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ED5C4D831C66AED1003BA5EE /* main.m */; };
+		ED5C4D951C66AED1003BA5EE /* Snippet+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = ED5C4D861C66AED1003BA5EE /* Snippet+CoreDataProperties.m */; };
+		ED5C4D961C66AED1003BA5EE /* Snippet.m in Sources */ = {isa = PBXBuildFile; fileRef = ED5C4D881C66AED1003BA5EE /* Snippet.m */; };
+		ED5C4D971C66AED1003BA5EE /* ApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = ED5C4D8B1C66AED1003BA5EE /* ApiClient.m */; };
+		ED5C4D981C66AED1003BA5EE /* SnippetModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED5C4D8C1C66AED1003BA5EE /* SnippetModel.xcdatamodeld */; };
 		EDCDEB0D1C5EB8AD00C4E871 /* SnippetManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCDEB0C1C5EB8AD00C4E871 /* SnippetManagerTests.m */; };
-		EDCDEB191C5ECBA500C4E871 /* ApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCDEB181C5ECBA500C4E871 /* ApiClient.m */; };
-		EDCDEB1F1C5ECF8400C4E871 /* SnippetModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EDCDEB1D1C5ECF8400C4E871 /* SnippetModel.xcdatamodeld */; };
 		EDCDEB211C5ED64400C4E871 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDCDEB201C5ED64400C4E871 /* CoreData.framework */; };
-		EDCDEB2A1C5EDDC300C4E871 /* DataController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCDEB291C5EDDC300C4E871 /* DataController.m */; };
 		F7D2757D0B9693D94868E67B /* libPods-SnippetManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54E74DEEBBBD8277E6F0852C /* libPods-SnippetManager.a */; };
 /* End PBXBuildFile section */
 
@@ -36,28 +37,28 @@
 		11C6272ABC56212DC16CB227 /* Pods-SnippetManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnippetManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnippetManager/Pods-SnippetManager.debug.xcconfig"; sourceTree = "<group>"; };
 		54E74DEEBBBD8277E6F0852C /* libPods-SnippetManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SnippetManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F68218799E371532FED4646 /* Pods-SnippetManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnippetManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-SnippetManager/Pods-SnippetManager.release.xcconfig"; sourceTree = "<group>"; };
-		E84147561C5F943700B60F5D /* Snippet+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Snippet+CoreDataProperties.h"; sourceTree = "<group>"; };
-		E84147571C5F943700B60F5D /* Snippet+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Snippet+CoreDataProperties.m"; sourceTree = "<group>"; };
-		E84147581C5F943700B60F5D /* Snippet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Snippet.h; sourceTree = "<group>"; };
-		E84147591C5F943700B60F5D /* Snippet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Snippet.m; sourceTree = "<group>"; };
+		ED5C4D761C66AED1003BA5EE /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		ED5C4D771C66AED1003BA5EE /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		ED5C4D781C66AED1003BA5EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ED5C4D7B1C66AED1003BA5EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
+		ED5C4D7D1C66AED1003BA5EE /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		ED5C4D7E1C66AED1003BA5EE /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		ED5C4D801C66AED1003BA5EE /* DataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataController.h; sourceTree = "<group>"; };
+		ED5C4D811C66AED1003BA5EE /* DataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataController.m; sourceTree = "<group>"; };
+		ED5C4D821C66AED1003BA5EE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED5C4D831C66AED1003BA5EE /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		ED5C4D851C66AED1003BA5EE /* Snippet+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Snippet+CoreDataProperties.h"; sourceTree = "<group>"; };
+		ED5C4D861C66AED1003BA5EE /* Snippet+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Snippet+CoreDataProperties.m"; sourceTree = "<group>"; };
+		ED5C4D871C66AED1003BA5EE /* Snippet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Snippet.h; sourceTree = "<group>"; };
+		ED5C4D881C66AED1003BA5EE /* Snippet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Snippet.m; sourceTree = "<group>"; };
+		ED5C4D8A1C66AED1003BA5EE /* ApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiClient.h; sourceTree = "<group>"; };
+		ED5C4D8B1C66AED1003BA5EE /* ApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiClient.m; sourceTree = "<group>"; };
+		ED5C4D8D1C66AED1003BA5EE /* SnippetModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SnippetModel.xcdatamodel; sourceTree = "<group>"; };
 		EDCDEAF21C5EB8AC00C4E871 /* SnippetManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnippetManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		EDCDEAF51C5EB8AC00C4E871 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		EDCDEAF61C5EB8AC00C4E871 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		EDCDEAF91C5EB8AC00C4E871 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		EDCDEAFB1C5EB8AC00C4E871 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		EDCDEAFC1C5EB8AC00C4E871 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		EDCDEAFE1C5EB8AC00C4E871 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		EDCDEB011C5EB8AC00C4E871 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		EDCDEB031C5EB8AC00C4E871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDCDEB081C5EB8AC00C4E871 /* SnippetManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnippetManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDCDEB0C1C5EB8AD00C4E871 /* SnippetManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SnippetManagerTests.m; sourceTree = "<group>"; };
 		EDCDEB0E1C5EB8AD00C4E871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EDCDEB171C5ECBA500C4E871 /* ApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiClient.h; sourceTree = "<group>"; };
-		EDCDEB181C5ECBA500C4E871 /* ApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiClient.m; sourceTree = "<group>"; };
-		EDCDEB1E1C5ECF8400C4E871 /* SnippetModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SnippetModel.xcdatamodel; sourceTree = "<group>"; };
 		EDCDEB201C5ED64400C4E871 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		EDCDEB281C5EDDC300C4E871 /* DataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataController.h; sourceTree = "<group>"; };
-		EDCDEB291C5EDDC300C4E871 /* DataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +99,52 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		ED5C4D791C66AED1003BA5EE /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				ED5C4D7A1C66AED1003BA5EE /* Main.storyboard */,
+			);
+			path = Base.lproj;
+			sourceTree = "<group>";
+		};
+		ED5C4D7C1C66AED1003BA5EE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ED5C4D7D1C66AED1003BA5EE /* ViewController.h */,
+				ED5C4D7E1C66AED1003BA5EE /* ViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		ED5C4D7F1C66AED1003BA5EE /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				ED5C4D801C66AED1003BA5EE /* DataController.h */,
+				ED5C4D811C66AED1003BA5EE /* DataController.m */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		ED5C4D841C66AED1003BA5EE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ED5C4D851C66AED1003BA5EE /* Snippet+CoreDataProperties.h */,
+				ED5C4D861C66AED1003BA5EE /* Snippet+CoreDataProperties.m */,
+				ED5C4D871C66AED1003BA5EE /* Snippet.h */,
+				ED5C4D881C66AED1003BA5EE /* Snippet.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		ED5C4D891C66AED1003BA5EE /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				ED5C4D8A1C66AED1003BA5EE /* ApiClient.h */,
+				ED5C4D8B1C66AED1003BA5EE /* ApiClient.m */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		EDCDEAE91C5EB8AB00C4E871 = {
 			isa = PBXGroup;
 			children = (
@@ -121,33 +168,19 @@
 		EDCDEAF41C5EB8AC00C4E871 /* SnippetManager */ = {
 			isa = PBXGroup;
 			children = (
-				EDCDEAF51C5EB8AC00C4E871 /* AppDelegate.h */,
-				EDCDEAF61C5EB8AC00C4E871 /* AppDelegate.m */,
-				EDCDEAFB1C5EB8AC00C4E871 /* ViewController.h */,
-				EDCDEAFC1C5EB8AC00C4E871 /* ViewController.m */,
-				EDCDEAFE1C5EB8AC00C4E871 /* Assets.xcassets */,
-				EDCDEB001C5EB8AC00C4E871 /* Main.storyboard */,
-				EDCDEB031C5EB8AC00C4E871 /* Info.plist */,
-				EDCDEAF81C5EB8AC00C4E871 /* Supporting Files */,
-				EDCDEB171C5ECBA500C4E871 /* ApiClient.h */,
-				EDCDEB181C5ECBA500C4E871 /* ApiClient.m */,
-				EDCDEB1D1C5ECF8400C4E871 /* SnippetModel.xcdatamodeld */,
-				EDCDEB281C5EDDC300C4E871 /* DataController.h */,
-				EDCDEB291C5EDDC300C4E871 /* DataController.m */,
-				E84147561C5F943700B60F5D /* Snippet+CoreDataProperties.h */,
-				E84147571C5F943700B60F5D /* Snippet+CoreDataProperties.m */,
-				E84147581C5F943700B60F5D /* Snippet.h */,
-				E84147591C5F943700B60F5D /* Snippet.m */,
+				ED5C4D761C66AED1003BA5EE /* AppDelegate.h */,
+				ED5C4D771C66AED1003BA5EE /* AppDelegate.m */,
+				ED5C4D781C66AED1003BA5EE /* Assets.xcassets */,
+				ED5C4D791C66AED1003BA5EE /* Base.lproj */,
+				ED5C4D7C1C66AED1003BA5EE /* Controllers */,
+				ED5C4D7F1C66AED1003BA5EE /* Data */,
+				ED5C4D821C66AED1003BA5EE /* Info.plist */,
+				ED5C4D831C66AED1003BA5EE /* main.m */,
+				ED5C4D841C66AED1003BA5EE /* Models */,
+				ED5C4D891C66AED1003BA5EE /* Networking */,
+				ED5C4D8C1C66AED1003BA5EE /* SnippetModel.xcdatamodeld */,
 			);
 			path = SnippetManager;
-			sourceTree = "<group>";
-		};
-		EDCDEAF81C5EB8AC00C4E871 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				EDCDEAF91C5EB8AC00C4E871 /* main.m */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		EDCDEB0B1C5EB8AC00C4E871 /* SnippetManagerTests */ = {
@@ -242,8 +275,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDCDEAFF1C5EB8AC00C4E871 /* Assets.xcassets in Resources */,
-				EDCDEB021C5EB8AC00C4E871 /* Main.storyboard in Resources */,
+				ED5C4D8F1C66AED1003BA5EE /* Assets.xcassets in Resources */,
+				ED5C4D901C66AED1003BA5EE /* Main.storyboard in Resources */,
+				ED5C4D931C66AED1003BA5EE /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,14 +343,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDCDEAFD1C5EB8AC00C4E871 /* ViewController.m in Sources */,
-				EDCDEB2A1C5EDDC300C4E871 /* DataController.m in Sources */,
-				E841475A1C5F943700B60F5D /* Snippet+CoreDataProperties.m in Sources */,
-				EDCDEAFA1C5EB8AC00C4E871 /* main.m in Sources */,
-				EDCDEAF71C5EB8AC00C4E871 /* AppDelegate.m in Sources */,
-				EDCDEB1F1C5ECF8400C4E871 /* SnippetModel.xcdatamodeld in Sources */,
-				EDCDEB191C5ECBA500C4E871 /* ApiClient.m in Sources */,
-				E841475B1C5F943700B60F5D /* Snippet.m in Sources */,
+				ED5C4D911C66AED1003BA5EE /* ViewController.m in Sources */,
+				ED5C4D8E1C66AED1003BA5EE /* AppDelegate.m in Sources */,
+				ED5C4D941C66AED1003BA5EE /* main.m in Sources */,
+				ED5C4D951C66AED1003BA5EE /* Snippet+CoreDataProperties.m in Sources */,
+				ED5C4D921C66AED1003BA5EE /* DataController.m in Sources */,
+				ED5C4D981C66AED1003BA5EE /* SnippetModel.xcdatamodeld in Sources */,
+				ED5C4D961C66AED1003BA5EE /* Snippet.m in Sources */,
+				ED5C4D971C66AED1003BA5EE /* ApiClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,10 +373,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		EDCDEB001C5EB8AC00C4E871 /* Main.storyboard */ = {
+		ED5C4D7A1C66AED1003BA5EE /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				EDCDEB011C5EB8AC00C4E871 /* Base */,
+				ED5C4D7B1C66AED1003BA5EE /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -514,12 +548,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		EDCDEB1D1C5ECF8400C4E871 /* SnippetModel.xcdatamodeld */ = {
+		ED5C4D8C1C66AED1003BA5EE /* SnippetModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				EDCDEB1E1C5ECF8400C4E871 /* SnippetModel.xcdatamodel */,
+				ED5C4D8D1C66AED1003BA5EE /* SnippetModel.xcdatamodel */,
 			);
-			currentVersion = EDCDEB1E1C5ECF8400C4E871 /* SnippetModel.xcdatamodel */;
+			currentVersion = ED5C4D8D1C66AED1003BA5EE /* SnippetModel.xcdatamodel */;
 			path = SnippetModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
