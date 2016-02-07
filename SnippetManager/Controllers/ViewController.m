@@ -51,7 +51,6 @@ static NSString *CODE_SNIPPETS_PATH = @"/Library/Developer/Xcode/UserData/CodeSn
                                                                                 inDomains:NSUserDomainMask] firstObject];
                                      name = [documentsURL.path stringByAppendingFormat:@"/%@", name];
                                      
-                                     
                                      NSError *er = nil;
                                      
                                      [data writeToFile:name
@@ -106,7 +105,9 @@ static NSString *CODE_SNIPPETS_PATH = @"/Library/Developer/Xcode/UserData/CodeSn
         [[NSFileManager defaultManager] copyItemAtPath:snippet.snippetFilePath
                                                 toPath:path
                                                  error:&er];
-        NSLog(@"%@ error", er);
+        if (!er) {
+            snippet.isInstalled = YES;
+        }
     }
 }
 
