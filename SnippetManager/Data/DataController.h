@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "Snippet.h"
 
 @interface DataController : NSObject
 - (void)initializeCoreData;
@@ -17,5 +18,7 @@
 - (NSManagedObject*)findOrCreateObjectWithEntityName:(NSString*)entityName
                                            predicate:(NSPredicate*)predicate
                                    createNewIfAbsent:(BOOL)createNew;
+
+- (Snippet*)snippetWithAttributes:(NSDictionary*)attributes;
 
 @end

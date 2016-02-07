@@ -70,4 +70,21 @@
         NSAssert(store != nil, @"Error initializing PSC: %@\n%@", [error localizedDescription], [error userInfo]);
     });
 }
+
+
+- (Snippet*)snippetWithAttributes:(NSDictionary*)attributes {
+    NSString *identifier = attributes[@"_id"];
+    
+    Snippet *snippet = (Snippet*)[self findOrCreateObjectWithEntityName:@"Snippet"
+                                                              predicate:[NSPredicate predicateWithFormat:@"snippetIdentifier == %@", identifier]
+                                                      createNewIfAbsent:YES];
+    
+    snippet.snippetIdentifier = identifier;
+    snippet.snippetDescription = attributes[@"description"];
+    snippet.snippetShortcut = attributes[@"shortcut"];
+    snippet.snippetTitle = attributes[@"title"];
+ 
+    return snippet;
+}
+
 @end

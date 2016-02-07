@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,6 +17,11 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     
+    NSWindow *window = [[[NSApplication sharedApplication] windows] firstObject];
+    
+    ViewController *vc = (ViewController*)[window contentViewController];
+    
+    vc.apiClient = [ApiClient sharedInstance];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {

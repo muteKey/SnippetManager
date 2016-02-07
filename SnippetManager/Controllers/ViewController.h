@@ -8,9 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 #import <CoreData/CoreData.h>
+#import "ApiClient.h"
 
 @interface ViewController : NSViewController <NSTableViewDataSource, NSTableViewDelegate>
 
+@property (nonatomic) id<ApiClientProtocol> apiClient;
 
 @end
 

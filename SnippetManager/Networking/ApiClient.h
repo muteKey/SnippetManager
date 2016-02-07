@@ -8,9 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ApiClient : NSObject
-
-+ (instancetype)sharedInstance;
+@protocol ApiClientProtocol <NSObject>
 
 - (NSURLSessionTask*)snippetsWithSuccess:(void (^)(NSURLSessionDataTask *task, id responseObject))success
                                  failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
@@ -18,4 +16,11 @@
 - (NSURLSessionTask*)mediaWithID:(NSString*)identifier
                          success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
                          failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
+
+@end
+
+@interface ApiClient : NSObject <ApiClientProtocol>
+
++ (instancetype)sharedInstance;
+
 @end

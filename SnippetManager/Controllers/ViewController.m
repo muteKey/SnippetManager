@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "ApiClient.h"
 #import "DataController.h"
 #import "Snippet.h"
 #import "NSFileManager+CheckSumCheck.h"
@@ -25,56 +24,46 @@ static NSString *CODE_SNIPPETS_PATH = @"/Library/Developer/Xcode/UserData/CodeSn
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+}
+
+- (void)reloadData {
     __weak typeof (self) wSelf = self;
-    
-    [[ApiClient sharedInstance] snippetsWithSuccess:^(NSURLSessionDataTask *task, id responseObject) {
+
+    [self.apiClient snippetsWithSuccess:^(NSURLSessionDataTask *task, id responseObject) {
         
         for (NSDictionary *dict in responseObject) {
-            NSString *identifier = dict[@"_id"];
-            
-            Snippet *snippet = (Snippet*)[wSelf.dataController findOrCreateObjectWithEntityName:@"Snippet"
-                                                                                      predicate:[NSPredicate predicateWithFormat:@"snippetIdentifier == %@", identifier]
-                                                                              createNewIfAbsent:YES];
-            
-            snippet.snippetIdentifier = identifier;
-            snippet.snippetDescription = dict[@"description"];
-            snippet.snippetShortcut = dict[@"shortcut"];
-            snippet.snippetTitle = dict[@"title"];
+            Snippet *snippet = [wSelf.dataController snippetWithAttributes:dict];
             
             NSArray *fileIDs = dict[@"snippetFile"];
-            
             NSString *fileID = [fileIDs firstObject];
             
-            [[ApiClient sharedInstance] mediaWithID:fileID
-                                            success:^(NSURLSessionDataTask *task, id responseObject) {
-                                                
-                                                NSXMLDocument *doc = (NSXMLDocument *)responseObject;
-                                                NSData *data = doc.XMLData;
-                                                
-                                                NSString *name = [NSString stringWithFormat:@"%@.codesnippet", snippet.snippetIdentifier];
-                                                
-                                                NSFileManager *fileManager = [NSFileManager defaultManager];
-                                                
-                                                NSURL *documentsURL = [[fileManager URLsForDirectory:NSDocumentDirectory
-                                                                                           inDomains:NSUserDomainMask] firstObject];
-                                                name = [documentsURL.path stringByAppendingFormat:@"/%@", name];
-
-                                                
-                                                NSError *er = nil;
-                                                
-                                                [data writeToFile:name
-                                                          options:NSDataWritingAtomic
-                                                            error:&er];
-                                                
-                                                snippet.snippetFilePath = name;
-                                                
-                                                NSLog(@"%@", er.localizedDescription);
-                                                
-                                            }
-                                            failure:^(NSURLSessionDataTask *task, NSError *error) {
-                                                NSLog(@"Error %@", error);
-                                            }];
+            [wSelf.apiClient mediaWithID:fileID
+                                 success:^(NSURLSessionDataTask *task, id responseObject) {
+                                     
+                                     NSXMLDocument *doc = (NSXMLDocument *)responseObject;
+                                     NSData *data = doc.XMLData;
+                                     
+                                     NSString *name = [NSString stringWithFormat:@"%@.codesnippet", snippet.snippetIdentifier];
+                                     
+                                     NSFileManager *fileManager = [NSFileManager defaultManager];
+                                     
+                                     NSURL *documentsURL = [[fileManager URLsForDirectory:NSDocumentDirectory
+                                                                                inDomains:NSUserDomainMask] firstObject];
+                                     name = [documentsURL.path stringByAppendingFormat:@"/%@", name];
+                                     
+                                     
+                                     NSError *er = nil;
+                                     
+                                     [data writeToFile:name
+                                               options:NSDataWritingAtomic
+                                                 error:&er];
+                                     
+                                     snippet.snippetFilePath = name;
+                                     
+                                 }
+                                 failure:^(NSURLSessionDataTask *task, NSError *error) {
+                                     NSLog(@"Error %@", error);
+                                 }];
         }
         
         [wSelf.dataController.managedObjectContext save:nil];
@@ -83,8 +72,9 @@ static NSString *CODE_SNIPPETS_PATH = @"/Library/Developer/Xcode/UserData/CodeSn
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         
         NSLog(@"error %@", error);
-
+        
     }];
+
 }
 
 - (IBAction)installTapped:(NSButton *)sender {
@@ -120,6 +110,11 @@ static NSString *CODE_SNIPPETS_PATH = @"/Library/Developer/Xcode/UserData/CodeSn
     }
 }
 
+- (void)setApiClient:(id<ApiClientProtocol>)apiClient {
+    _apiClient = apiClient;
+    
+    [self reloadData];
+}
 
 - (DataController *)dataController {
     if (!_dataController) {
