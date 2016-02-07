@@ -18,6 +18,8 @@
 		ED5C4D961C66AED1003BA5EE /* Snippet.m in Sources */ = {isa = PBXBuildFile; fileRef = ED5C4D881C66AED1003BA5EE /* Snippet.m */; };
 		ED5C4D971C66AED1003BA5EE /* ApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = ED5C4D8B1C66AED1003BA5EE /* ApiClient.m */; };
 		ED5C4D981C66AED1003BA5EE /* SnippetModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED5C4D8C1C66AED1003BA5EE /* SnippetModel.xcdatamodeld */; };
+		ED5C4D9C1C66AFA7003BA5EE /* NSData+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = ED5C4D9B1C66AFA7003BA5EE /* NSData+MD5.m */; };
+		ED5C4D9F1C66B2C4003BA5EE /* NSFileManager+CheckSumCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = ED5C4D9E1C66B2C4003BA5EE /* NSFileManager+CheckSumCheck.m */; };
 		EDCDEB0D1C5EB8AD00C4E871 /* SnippetManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCDEB0C1C5EB8AD00C4E871 /* SnippetManagerTests.m */; };
 		EDCDEB211C5ED64400C4E871 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDCDEB201C5ED64400C4E871 /* CoreData.framework */; };
 		F7D2757D0B9693D94868E67B /* libPods-SnippetManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54E74DEEBBBD8277E6F0852C /* libPods-SnippetManager.a */; };
@@ -54,6 +56,10 @@
 		ED5C4D8A1C66AED1003BA5EE /* ApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiClient.h; sourceTree = "<group>"; };
 		ED5C4D8B1C66AED1003BA5EE /* ApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiClient.m; sourceTree = "<group>"; };
 		ED5C4D8D1C66AED1003BA5EE /* SnippetModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SnippetModel.xcdatamodel; sourceTree = "<group>"; };
+		ED5C4D9A1C66AFA7003BA5EE /* NSData+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MD5.h"; sourceTree = "<group>"; };
+		ED5C4D9B1C66AFA7003BA5EE /* NSData+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MD5.m"; sourceTree = "<group>"; };
+		ED5C4D9D1C66B2C4003BA5EE /* NSFileManager+CheckSumCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+CheckSumCheck.h"; sourceTree = "<group>"; };
+		ED5C4D9E1C66B2C4003BA5EE /* NSFileManager+CheckSumCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+CheckSumCheck.m"; sourceTree = "<group>"; };
 		EDCDEAF21C5EB8AC00C4E871 /* SnippetManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnippetManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDCDEB081C5EB8AC00C4E871 /* SnippetManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnippetManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDCDEB0C1C5EB8AD00C4E871 /* SnippetManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SnippetManagerTests.m; sourceTree = "<group>"; };
@@ -145,6 +151,17 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		ED5C4D991C66AF90003BA5EE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ED5C4D9A1C66AFA7003BA5EE /* NSData+MD5.h */,
+				ED5C4D9B1C66AFA7003BA5EE /* NSData+MD5.m */,
+				ED5C4D9D1C66B2C4003BA5EE /* NSFileManager+CheckSumCheck.h */,
+				ED5C4D9E1C66B2C4003BA5EE /* NSFileManager+CheckSumCheck.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		EDCDEAE91C5EB8AB00C4E871 = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +185,7 @@
 		EDCDEAF41C5EB8AC00C4E871 /* SnippetManager */ = {
 			isa = PBXGroup;
 			children = (
+				ED5C4D991C66AF90003BA5EE /* Extensions */,
 				ED5C4D761C66AED1003BA5EE /* AppDelegate.h */,
 				ED5C4D771C66AED1003BA5EE /* AppDelegate.m */,
 				ED5C4D781C66AED1003BA5EE /* Assets.xcassets */,
@@ -343,7 +361,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED5C4D9F1C66B2C4003BA5EE /* NSFileManager+CheckSumCheck.m in Sources */,
 				ED5C4D911C66AED1003BA5EE /* ViewController.m in Sources */,
+				ED5C4D9C1C66AFA7003BA5EE /* NSData+MD5.m in Sources */,
 				ED5C4D8E1C66AED1003BA5EE /* AppDelegate.m in Sources */,
 				ED5C4D941C66AED1003BA5EE /* main.m in Sources */,
 				ED5C4D951C66AED1003BA5EE /* Snippet+CoreDataProperties.m in Sources */,

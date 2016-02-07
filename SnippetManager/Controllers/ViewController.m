@@ -10,6 +10,7 @@
 #import "ApiClient.h"
 #import "DataController.h"
 #import "Snippet.h"
+#import "NSFileManager+CheckSumCheck.h"
 
 static NSString *CODE_SNIPPETS_PATH = @"/Library/Developer/Xcode/UserData/CodeSnippets/";
 
@@ -89,15 +90,34 @@ static NSString *CODE_SNIPPETS_PATH = @"/Library/Developer/Xcode/UserData/CodeSn
 - (IBAction)installTapped:(NSButton *)sender {
     Snippet *snippet = self.arrayController.selectedObjects.firstObject;
     
-    NSString *path = [NSHomeDirectory() stringByAppendingString:CODE_SNIPPETS_PATH];
-    path = [path stringByAppendingString:snippet.snippetFilePath.lastPathComponent];
+    NSURL *snippetURL = [NSURL fileURLWithPath:snippet.snippetFilePath];
     
+    NSString *path = [NSHomeDirectory() stringByAppendingString:CODE_SNIPPETS_PATH];
+    NSURL *urlPath = [NSURL URLWithString:path];
+    path = [path stringByAppendingString:snippet.snippetFilePath.lastPathComponent];
+
     NSError *er = nil;
     
-    [[NSFileManager defaultManager] copyItemAtPath:snippet.snippetFilePath
-                                            toPath:path
-                                             error:&er];
-    NSLog(@"%@ error", er);
+    BOOL contained = [[NSFileManager defaultManager] isFileWithURL:snippetURL containedInDirectoryURL:urlPath error:&er];
+    
+    if (contained) {
+        
+        NSString *text = (er) ? er.localizedDescription : @"Snippet already contained in directory";
+        
+        NSAlert *alert = [[NSAlert alloc] init];
+        [alert addButtonWithTitle:@"OK"];
+        [alert setMessageText:@"Error"];
+        [alert setInformativeText:text];
+        [alert setAlertStyle:NSWarningAlertStyle];
+        
+        [alert runModal];
+    }
+    else {
+        [[NSFileManager defaultManager] copyItemAtPath:snippet.snippetFilePath
+                                                toPath:path
+                                                 error:&er];
+        NSLog(@"%@ error", er);
+    }
 }
 
 
