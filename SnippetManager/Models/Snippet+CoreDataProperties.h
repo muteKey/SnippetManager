@@ -2,7 +2,7 @@
 //  Snippet+CoreDataProperties.h
 //  SnippetManager
 //
-//  Created by Kirill Ushkov on 2/1/16.
+//  Created by Kirill Ushkov on 2/8/16.
 //  Copyright © 2016 Kirill Ushkov. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -17,9 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nullable, nonatomic, retain) NSString *snippetDescription;
 @property (nullable, nonatomic, retain) NSString *snippetFilePath;
+@property (nullable, nonatomic, retain) NSString *snippetIdentifier;
 @property (nullable, nonatomic, retain) NSString *snippetShortcut;
 @property (nullable, nonatomic, retain) NSString *snippetTitle;
-@property (nullable, nonatomic, retain) NSString *snippetIdentifier;
+@property (nonatomic) BOOL isInstalled;
 
 @end
 

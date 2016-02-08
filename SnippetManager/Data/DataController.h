@@ -21,4 +21,5 @@
 
 - (Snippet*)snippetWithAttributes:(NSDictionary*)attributes;
 
+
 @end

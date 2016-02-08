@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15B42" minimumToolsVersion="Xcode 7.0">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Xcode 7.0">
     <entity name="Snippet" representedClassName="Snippet" syncable="YES">
+        <attribute name="isInstalled" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="snippetDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="snippetFilePath" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="snippetIdentifier" optional="YES" attributeType="String" syncable="YES"/>
@@ -8,6 +9,6 @@
         <attribute name="snippetTitle" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Snippet" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="Snippet" positionX="-63" positionY="-18" width="128" height="135"/>
     </elements>
 </model>
