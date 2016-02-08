@@ -50,9 +50,9 @@ static NSString *CODE_SNIPPETS_PATH = @"/Library/Developer/Xcode/UserData/CodeSn
                                      
                                      NSFileManager *fileManager = [NSFileManager defaultManager];
                                      
-                                     NSURL *documentsURL = [[fileManager URLsForDirectory:NSDocumentDirectory
+                                     NSURL *documentsURL = [[fileManager URLsForDirectory:NSApplicationDirectory
                                                                                 inDomains:NSUserDomainMask] firstObject];
-                                     name = [documentsURL.path stringByAppendingFormat:@"/%@", name];
+                                     name = [documentsURL.path stringByAppendingPathComponent: name];
                                      
                                      NSError *er = nil;
                                      

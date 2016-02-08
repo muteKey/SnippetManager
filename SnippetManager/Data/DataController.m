@@ -87,9 +87,4 @@
     return snippet;
 }
 
-- (NSArray *)snippetTableConfiguration {
-    // TODO: add implementation for table config
-    return nil;
-}
-
 @end

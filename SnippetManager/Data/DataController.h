@@ -21,6 +21,5 @@
 
 - (Snippet*)snippetWithAttributes:(NSDictionary*)attributes;
 
-- (NSArray*)snippetTableConfiguration;
 
 @end
