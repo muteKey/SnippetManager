@@ -14,9 +14,12 @@
 static NSString *CODE_SNIPPETS_PATH = @"/Library/Developer/Xcode/UserData/CodeSnippets/";
 
 @interface ViewController ()
+
 @property (nonatomic, strong) IBOutlet NSArrayController *arrayController;
 @property (nonatomic, strong) DataController *dataController;
 @property (weak) IBOutlet NSTableView *tableView;
+@property (weak) IBOutlet NSTextField *snippetShortcutLabel;
+@property (weak) IBOutlet NSTextField *snippetDescriptionLabel;
 
 @end
 
@@ -59,6 +62,8 @@ static NSString *CODE_SNIPPETS_PATH = @"/Library/Developer/Xcode/UserData/CodeSn
                                      
                                      snippet.snippetFilePath = name;
                                      
+                                     [wSelf.tableView reloadData];
+                                     
                                  }
                                  failure:^(NSURLSessionDataTask *task, NSError *error) {
                                      NSLog(@"Error %@", error);
@@ -76,8 +81,37 @@ static NSString *CODE_SNIPPETS_PATH = @"/Library/Developer/Xcode/UserData/CodeSn
 
 }
 
+#pragma mark - NSTableView -
+
+- (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
+    NSTableCellView *cellView = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
+    
+    if( [tableColumn.identifier isEqualToString:@"SnippetTitle"] )
+    {
+        Snippet *snippet = [self.arrayController.arrangedObjects objectAtIndex:row];
+        cellView.textField.stringValue = snippet.snippetTitle;
+        return cellView;
+    }
+    return cellView;
+}
+
+- (void)tableViewSelectionDidChange:(NSNotification *)aNotification {
+    Snippet *snippet = [self.arrayController.arrangedObjects objectAtIndex:self.tableView.selectedRow];
+    [self setDetailInfo:snippet];
+}
+
+- (void)setDetailInfo:(Snippet*)snippet {
+    self.snippetDescriptionLabel.stringValue = snippet.snippetDescription;
+    self.snippetShortcutLabel.stringValue = snippet.snippetShortcut;
+}
+
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
+    return [self.arrayController.arrangedObjects count];
+}
+
+
 - (IBAction)installTapped:(NSButton *)sender {
-    Snippet *snippet = self.arrayController.selectedObjects.firstObject;
+    Snippet *snippet = [self.arrayController.arrangedObjects objectAtIndex:self.tableView.selectedRow];
     
     NSURL *snippetURL = [NSURL fileURLWithPath:snippet.snippetFilePath];
     
@@ -91,7 +125,7 @@ static NSString *CODE_SNIPPETS_PATH = @"/Library/Developer/Xcode/UserData/CodeSn
     
     if (contained) {
         
-        NSString *text = (er) ? er.localizedDescription : @"Snippet already contained in directory";
+        NSString *text = (er) ? er.localizedDescription : @"Snippet is already installed";
         
         NSAlert *alert = [[NSAlert alloc] init];
         [alert addButtonWithTitle:@"OK"];
@@ -113,7 +147,6 @@ static NSString *CODE_SNIPPETS_PATH = @"/Library/Developer/Xcode/UserData/CodeSn
 
 - (void)setApiClient:(id<ApiClientProtocol>)apiClient {
     _apiClient = apiClient;
-    
     [self reloadData];
 }
 
